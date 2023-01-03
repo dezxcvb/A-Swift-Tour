@@ -94,6 +94,7 @@ occupations["Jayne"] = "Public Relations"
 //: Arrays automatically grow as you add elements.
 //:
 fruits.append("blueberries")
+
 // print(fruits)
 
 //: To create an empty array or dictionary, use the initializer syntax.
