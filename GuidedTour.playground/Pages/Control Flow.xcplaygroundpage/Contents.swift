@@ -11,20 +11,35 @@ for score in individualScores {
         teamScore += 1
     }
 }
-print(teamScore)
+
+// print(teamScore)
 
 //: In an `if` statement, the conditional must be a Boolean expression—this means that code such as `if score { ... }` is an error, not an implicit comparison to zero.
 //:
 //: You can use `if` and `let` together to work with values that might be missing. These values are represented as optionals. An optional value either contains a value or contains `nil` to indicate that a value is missing. Write a question mark (`?`) after the type of a value to mark the value as optional.
 //:
 var optionalString: String? = "Hello"
-print(optionalString == nil)
 
-var optionalName: String? = "John Appleseed"
+// print(optionalString == nil)
+
+var optionalName: String? = "John Appleseed" // "John Appleseed" -> nil - greeting = "Hello!"
 var greeting = "Hello!"
 if let name = optionalName {
     greeting = "Hello, \(name)"
 }
+
+// print(greeting)
+
+// var optionalName: String? = // MARK: "John Appleseed" / nil (input is unavailable in SwiftPlayground)
+// var greeting = "Hello!"
+// if let name = optionalName {
+//     greeting = "Hello, \(name)"
+// }
+// else {
+//     greeting = "String is nil"
+// }
+
+// print(greeting)
 
 //: - Experiment:
 //: Change `optionalName` to `nil`. What greeting do you get? Add an `else` clause that sets a different greeting if `optionalName` is `nil`.
@@ -37,11 +52,17 @@ let nickname: String? = nil
 let fullName: String = "John Appleseed"
 let informalGreeting = "Hi \(nickname ?? fullName)"
 
+// print(informalGreeting)
+
 //: You can use a shorter spelling to unwrap a value, using the same name for that unwrapped value.
 //:
-if let nickname {
-    print("Hey, \(nickname)")
+let optionalName0: String? = "John Appleseed"
+var greeting0 = "Hey!"
+if let optionalName0 {
+    greeting0 = "Hey, \(optionalName0)"
 }
+
+// print(greeting0)
 
 //: Switches support any kind of data and a wide variety of comparison operations—they aren’t limited to integers and tests for equality.
 //:
