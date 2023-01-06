@@ -7,6 +7,11 @@ func greet(person: String, day: String) -> String {
 }
 greet(person: "Bob", day: "Tuesday")
 
+func greeting(name: String, lunch: String) -> String {
+    return "Hello \(name), today's special lunch is \(lunch)."
+}
+greeting(name: "Bob", lunch: "tomato marinade")
+
 //: - Experiment:
 //: Remove the `day` parameter. Add a parameter to include today’s lunch special in the greeting.
 //:
@@ -19,7 +24,7 @@ greet("John", on: "Wednesday")
 
 //: Use a tuple to make a compound value—for example, to return multiple values from a function. The elements of a tuple can be referred to either by name or by number.
 //:
-func calculateStatistics(scores: [Int]) -> (min: Int, max: Int, sum: Int) {
+func calculateStatistics(scores: [Int]) -> (min: Int /* [0] */, max: Int /* [1] */, sum: Int /* [2] */) {
     var min = scores[0]
     var max = scores[0]
     var sum = 0
@@ -35,9 +40,9 @@ func calculateStatistics(scores: [Int]) -> (min: Int, max: Int, sum: Int) {
 
     return (min, max, sum)
 }
-let statistics = calculateStatistics(scores: [5, 3, 100, 3, 9])
-print(statistics.sum)
-print(statistics.2)
+let statistics = calculateStatistics(scores: [5 /* [0] */, 3 /* [1] */, 100 /* [2] */, 3 /* [3] */, 9 /* [4] */])
+// print(statistics.min, statistics.max, statistics.sum)
+// print(statistics.0, statistics.1, statistics.2)
 
 //: Functions can be nested. Nested functions have access to variables that were declared in the outer function. You can use nested functions to organize the code in a function that’s long or complex.
 //:
