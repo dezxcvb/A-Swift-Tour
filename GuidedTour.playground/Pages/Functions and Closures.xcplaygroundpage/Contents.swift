@@ -56,6 +56,18 @@ func returnFifteen() -> Int {
 }
 returnFifteen()
 
+/*
+func returnFifteen() -> Int {
+    var y = 10
+    add()
+    return y
+    func add() {
+        y += 5
+    }
+}
+returnFifteen()
+*/
+
 //: Functions are a first-class type. This means that a function can return another function as its value.
 //:
 func makeIncrementer() -> ((Int) -> Int) {
@@ -63,6 +75,7 @@ func makeIncrementer() -> ((Int) -> Int) {
         return 1 + number
     }
     return addOne
+// return makeIncrementer()
 }
 var increment = makeIncrementer()
 increment(7)
@@ -87,6 +100,7 @@ hasAnyMatches(list: numbers, condition: lessThanTen)
 //:
 numbers.map({ (number: Int) -> Int in
     let result = 3 * number
+    // print(result)
     return result
 })
 
@@ -96,13 +110,11 @@ numbers.map({ (number: Int) -> Int in
 //: You have several options for writing closures more concisely. When a closure’s type is already known, such as the callback for a delegate, you can omit the type of its parameters, its return type, or both. Single statement closures implicitly return the value of their only statement.
 //:
 let mappedNumbers = numbers.map({ number in 3 * number })
-print(mappedNumbers)
+// print(mappedNumbers)
 
 //: You can refer to parameters by number instead of by name—this approach is especially useful in very short closures. A closure passed as the last argument to a function can appear immediately after the parentheses. When a closure is the only argument to a function, you can omit the parentheses entirely.
 //:
 let sortedNumbers = numbers.sorted { $0 > $1 }
-print(sortedNumbers)
-
-
+// print(sortedNumbers)
 
 //: [Previous](@previous) | [Next](@next)

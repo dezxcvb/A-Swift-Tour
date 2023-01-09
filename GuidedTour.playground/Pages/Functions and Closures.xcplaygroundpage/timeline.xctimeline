@@ -3,16 +3,22 @@
    version = "3.0">
    <TimelineItems>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/l7/Documents/A%20Swift%20Tour/GuidedTour.playground/Pages/Functions%20and%20Closures.xcplaygroundpage#CharacterRangeLen=30&amp;CharacterRangeLoc=957&amp;EndingColumnNumber=0&amp;EndingLineNumber=23&amp;StartingColumnNumber=1&amp;StartingLineNumber=22&amp;Timestamp=694668047.114841"
+         documentLocation = "file:///Users/l7/Documents/A%20Swift%20Tour/GuidedTour.playground/Pages/Functions%20and%20Closures.xcplaygroundpage#CharacterRangeLen=30&amp;CharacterRangeLoc=957&amp;EndingColumnNumber=0&amp;EndingLineNumber=23&amp;StartingColumnNumber=1&amp;StartingLineNumber=22&amp;Timestamp=694968007.225227"
          selectedRepresentationIndex = "0">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/l7/Documents/A%20Swift%20Tour/GuidedTour.playground/Pages/Functions%20and%20Closures.xcplaygroundpage#CharacterRangeLen=47&amp;CharacterRangeLoc=499&amp;EndingColumnNumber=0&amp;EndingLineNumber=13&amp;StartingColumnNumber=1&amp;StartingLineNumber=12&amp;Timestamp=694668047.114938"
+         documentLocation = "file:///Users/l7/Documents/A%20Swift%20Tour/GuidedTour.playground/Pages/Functions%20and%20Closures.xcplaygroundpage#CharacterRangeLen=47&amp;CharacterRangeLoc=499&amp;EndingColumnNumber=0&amp;EndingLineNumber=13&amp;StartingColumnNumber=1&amp;StartingLineNumber=12&amp;Timestamp=694968007.22533"
          selectedRepresentationIndex = "0">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/l7/Documents/A%20Swift%20Tour/GuidedTour.playground/Pages/Functions%20and%20Closures.xcplaygroundpage#CharacterRangeLen=36&amp;CharacterRangeLoc=341&amp;EndingColumnNumber=0&amp;EndingLineNumber=8&amp;StartingColumnNumber=1&amp;StartingLineNumber=7&amp;Timestamp=694668047.114988"
+         documentLocation = "file:///Users/l7/Documents/A%20Swift%20Tour/GuidedTour.playground/Pages/Functions%20and%20Closures.xcplaygroundpage#CharacterRangeLen=36&amp;CharacterRangeLoc=341&amp;EndingColumnNumber=0&amp;EndingLineNumber=8&amp;StartingColumnNumber=1&amp;StartingLineNumber=7&amp;Timestamp=694968007.2253751"
          selectedRepresentationIndex = "0">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/l7/Documents/A%20Swift%20Tour/GuidedTour.playground/Pages/Functions%20and%20Closures.xcplaygroundpage#CharacterRangeLen=610&amp;CharacterRangeLoc=2932&amp;EndingColumnNumber=0&amp;EndingLineNumber=105&amp;StartingColumnNumber=0&amp;StartingLineNumber=98&amp;Timestamp=694968007.225421"
+         lockedSize = "{175, 80}"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
    </TimelineItems>
 </Timeline>
