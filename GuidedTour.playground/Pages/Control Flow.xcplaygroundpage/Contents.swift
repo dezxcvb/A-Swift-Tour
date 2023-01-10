@@ -30,16 +30,18 @@ if let name = optionalName {
 
 // print(greeting)
 
-// var optionalName: String? = // MARK: "John Appleseed" / nil (input is unavailable in SwiftPlayground)
-// var greeting = "Hello!"
-// if let name = optionalName {
-//     greeting = "Hello, \(name)"
-// }
-// else {
-//     greeting = "String is nil"
-// }
+/*
+var optionalName: String? = // MARK: "John Appleseed" / nil // (input is unavailable in SwiftPlayground)
+var greeting = "Hello!"
+if let name = optionalName {
+    greeting = "Hello, \(name)"
+}
+else {
+    greeting = "String is nil"
+}
 
 // print(greeting)
+*/
 
 //: - Experiment:
 //: Change `optionalName` to `nil`. What greeting do you get? Add an `else` clause that sets a different greeting if `optionalName` is `nil`.
@@ -66,7 +68,8 @@ if let optionalName0 {
 
 //: Switches support any kind of data and a wide variety of comparison operations—they aren’t limited to integers and tests for equality.
 //:
-/* let vegetableBack = "red pepper"
+/*
+let vegetableBack = "red pepper"
 switch vegetableBack {
     case "celery":
         print("Add some raisins and make ants on a log.")
@@ -77,9 +80,9 @@ switch vegetableBack {
     default:
         print("Everything tastes good in soup.")
     // Switch must be exhaustive
-} */
+}
 
-/* let vegetableFront = "green pepper"
+let vegetableFront = "green pepper"
 switch vegetableFront {
     case "celery":
         print("Add some raisins and make ants on a log.")
@@ -90,9 +93,9 @@ switch vegetableFront {
     default:
         print("Everything tastes good in soup.")
     // Switch must be exhaustive
-} */
+}
 
-/* let vegetable = "blue pepper"
+let vegetable = "blue pepper"
 switch vegetable {
     case "celery":
         print("Add some raisins and make ants on a log.")
@@ -103,7 +106,8 @@ switch vegetable {
     default:
         print("Everything tastes good in soup.")
     // Switch must be exhaustive
-} */
+}
+*/
 
 //: - Experiment:
 //: Try removing the default case. What error do you get?
@@ -120,7 +124,7 @@ let interestingNumbers = [
     "Square": [1, 4, 9, 16, 25],
 ]
 var largest = 0
-for (_, numbers) in interestingNumbers {
+for (_, numbers) in interestingNumbers { // // for (variable_name, number0) in interestNumbers {
     for number in numbers {
         if number > largest {
             largest = number
@@ -128,21 +132,6 @@ for (_, numbers) in interestingNumbers {
     }
 }
 // print(largest)
-
-/* let interestNumbers = [
-    "mekaPrime": [2, 3, 5, 7, 11, 13],
-    "Fiora": [1, 1, 2, 3, 5, 8],
-    "minSquare": [1, 4, 9, 16, 25],
-]
-var largests = 0
-for (variable_name, number0) in interestNumbers {
-    for number1 in number0 {
-        if number1 > largests {
-            largests = number1
-        }
-    }
-}
-// print(largests) */
 
 //: - Experiment:
 //: Replace the `_` with a variable name, and keep track of which kind of number was the largest.
