@@ -104,7 +104,13 @@ hasAnyMatches(list: numbers, condition: lessThanTen)
 numbers.map({ (number: Int) -> Int in
     let result = 3 * number
     // print(result)
-    return result // return result % 2 != 0 ? 0 : result
+    return result
+})
+
+numbers.map({ (number: Int) -> Int in
+    let result = 3 * number
+    // print(result)
+    return result % 2 != 0 ? 0 : result
 })
 
 //: - Experiment:
