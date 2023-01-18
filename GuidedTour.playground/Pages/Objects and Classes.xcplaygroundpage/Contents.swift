@@ -9,6 +9,20 @@ class Shape {
     }
 }
 
+/*
+let colorOfBottom = "black"
+func simpleDescriptionColor() -> String {
+     return "A Shape with \(colorOfBottom) top."
+/*
+class Shape0 {
+    let colorOfBottom = "black"
+    func simpleDescriptionColor() -> String {
+        return "A Shape with \(colorOfBottom) top."
+    }
+}
+*/
+*/
+
 //: - Experiment:
 //: Add a constant property with `let`, and add another method that takes an argument.
 //:
@@ -17,6 +31,12 @@ class Shape {
 var shape = Shape()
 shape.numberOfSides = 7
 var shapeDescription = shape.simpleDescription()
+
+// shape.numberOfSides
+// shape.simpleDescription()
+
+// print(shape.numberOfSides)
+// print(shape.simpleDescription())
 
 //: This version of the `Shape` class is missing something important: an initializer to set up the class when an instance is created. Use `init` to create one.
 //:
