@@ -41,11 +41,11 @@ var shapeDescription = shape.simpleDescription()
 //: This version of the `Shape` class is missing something important: an initializer to set up the class when an instance is created. Use `init` to create one.
 //:
 class NamedShape {
-    var numberOfSides: Int = 0
+    var numberOfSides/* : Int */ = 0
     var name: String
 
     init(name: String) {
-       self.name = name
+       self.name = name // self.name(property) = name(argument)
     }
 
     func simpleDescription() -> String {
@@ -64,23 +64,61 @@ class NamedShape {
 class Square: NamedShape {
     var sideLength: Double
 
-    init(sideLength: Double, name: String) {
+    init(sideLength: Double, name: String) { // arguments for init
         self.sideLength = sideLength
-        super.init(name: name)
-        numberOfSides = 4
+        
+        super/*superclass*/.init(name: name) // property (of superclass) initialize
+        numberOfSides = 4 // property (of superclass) redefine(redeclare)
     }
 
     func area() -> Double {
         return sideLength * sideLength
     }
 
-    override func simpleDescription() -> String {
+    override func simpleDescription() -> String { // method redefine/redeclare(override)
         return "A square with sides of length \(sideLength)."
     }
 }
+
 let test = Square(sideLength: 5.2, name: "my test square")
-test.area()
-test.simpleDescription()
+let test0 = Square(sideLength: 2.5, name: "my test: 0 rectangle")
+
+// print(test/*0*/.numberOfSides)
+
+// print(test/*0*/.name)
+// print(test/*0*/.sideLength)
+
+// print(test/*0*/.area())
+// print(test/*0*/.simpleDescription())
+
+
+
+class Circle: NamedShape {
+    var radius: Double
+
+    init(radius: Double, name: String) { // arguments for init
+        self.radius = radius
+        
+        super/*superclass*/.init(name: name) // property (of superclass) initialize
+        numberOfSides = 0 // property (of superclass) redefine(redeclare)
+    }
+
+    func area() -> Double {
+        return radius * radius * 3.14
+    }
+
+    override func simpleDescription() -> String { // method redefine/redeclare(override)
+        return "A circle with half of diameter \(2 * radius)."
+    }
+}
+
+let experiment = Circle(radius: 1, name: "my experiment Circle")
+
+// print(experiment.name)
+// print(experiment.radius)
+
+// print(experiment.area())
+// print(experiment.simpleDescription())
 
 //: - Experiment:
 //: Make another subclass of `NamedShape` called `Circle` that takes a radius and a name as arguments to its initializer. Implement an `area()` and a `simpleDescription()` method on the `Circle` class.
@@ -152,7 +190,6 @@ print(triangleAndSquare.triangle.sideLength)
 //:
 let optionalSquare: Square? = Square(sideLength: 2.5, name: "optional square")
 let sideLength = optionalSquare?.sideLength
-
 
 
 //: [Previous](@previous) | [Next](@next)
