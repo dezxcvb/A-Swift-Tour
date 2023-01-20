@@ -64,18 +64,18 @@ class NamedShape {
 class Square: NamedShape {
     var sideLength: Double
 
-    init(sideLength: Double, name: String) { // arguments for init
+    init(sideLength: Double, name: String) {
         self.sideLength = sideLength
         
-        super/*superclass*/.init(name: name) // property (of superclass) initialize
-        numberOfSides = 4 // property (of superclass) redefine(redeclare)
+        super.init(name: name)
+        numberOfSides = 4
     }
 
     func area() -> Double {
         return sideLength * sideLength
     }
 
-    override func simpleDescription() -> String { // method redefine/redeclare(override)
+    override func simpleDescription() -> String {
         return "A square with sides of length \(sideLength)."
     }
 }
@@ -96,18 +96,18 @@ let test0 = Square(sideLength: 2.5, name: "my test: 0 rectangle")
 class Circle: NamedShape {
     var radius: Double
 
-    init(radius: Double, name: String) { // arguments for init
+    init(radius: Double, name: String) {
         self.radius = radius
         
-        super/*superclass*/.init(name: name) // property (of superclass) initialize
-        numberOfSides = 0 // property (of superclass) redefine(redeclare)
+        super.init(name: name)
+        numberOfSides = 0
     }
 
     func area() -> Double {
         return radius * radius * 3.14
     }
 
-    override func simpleDescription() -> String { // method redefine/redeclare(override)
+    override func simpleDescription() -> String {
         return "A circle with half of diameter \(2 * radius)."
     }
 }
@@ -130,6 +130,7 @@ class EquilateralTriangle: NamedShape {
 
     init(sideLength: Double, name: String) {
         self.sideLength = sideLength
+        
         super.init(name: name)
         numberOfSides = 3
     }
@@ -138,7 +139,7 @@ class EquilateralTriangle: NamedShape {
         get {
              return 3.0 * sideLength
         }
-        set {
+        set/*(newValue)*/ {
             sideLength = newValue / 3.0
         }
     }
@@ -148,9 +149,16 @@ class EquilateralTriangle: NamedShape {
     }
 }
 var triangle = EquilateralTriangle(sideLength: 3.1, name: "a triangle")
-print(triangle.perimeter)
-triangle.perimeter = 9.9
-print(triangle.sideLength)
+
+// print(triangle.perimeter)
+
+// triangle.perimeter = 9.9
+// print(triangle.perimeter)
+
+// print(triangle.name)
+// print(triangle.sideLength)
+
+// print(triangle.simpleDescription())
 
 //: In the setter for `perimeter`, the new value has the implicit name `newValue`. You can provide an explicit name in parentheses after `set`.
 //:
