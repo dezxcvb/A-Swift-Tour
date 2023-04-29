@@ -31,6 +31,22 @@ let aceRawValue = ace.rawValue
 
 // print(aceRawValue)
 
+
+
+func Comparison(firstRankValue: Rank, secondRankValue: Rank) -> String {
+    if firstRankValue.simpleDescription() > secondRankValue.simpleDescription() {
+        return "\(firstRankValue.rawValue)" + " > " + "\(secondRankValue.rawValue)"
+    } else if firstRankValue.rawValue < secondRankValue.rawValue {
+        return "\(firstRankValue.rawValue)" + " < " + "\(secondRankValue.rawValue)"
+    } else {
+        return "\(firstRankValue.rawValue)" + " = " + "\(secondRankValue.rawValue)"
+    }
+}
+
+Comparison(firstRankValue: Rank.ace, secondRankValue: Rank.two)
+
+// print(Comparison(firstRankValue: Rank.ace, secondRankValue: Rank.two))
+
 //: - Experiment:
 //: Write a function that compares two `Rank` values by comparing their raw values.
 //:
@@ -60,8 +76,52 @@ enum Suit {
         }
     }
 }
+
 let hearts = Suit.hearts
+
+// print(hearts)
+
 let heartsDescription = hearts.simpleDescription()
+
+// print(heartsDescription)
+
+
+
+/*
+enum Suit {
+    case spades, hearts, diamonds, clubs
+
+    func simpleDescription() -> String {
+        switch self {
+            case .spades:
+                return "spades"
+            case .hearts:
+                return "hearts"
+            case .diamonds:
+                return "diamonds"
+            case .clubs:
+                return "clubs"
+        }
+    }
+    
+    func color() -> String {
+        switch self {
+            case .spades, .clubs:
+                return "black"
+            case .hearts, .diamonds:
+                return "red"
+        }
+    }
+}
+
+let hearts = Suit.hearts
+
+// print(hearts)
+
+let heartsColor = hearts.color()
+
+// print(heartsDescription)
+*/
 
 //: - Experiment:
 //: Add a `color()` method to `Suit` that returns “black” for spades and clubs, and returns “red” for hearts and diamonds.
@@ -70,6 +130,7 @@ let heartsDescription = hearts.simpleDescription()
 //:
 //: If an enumeration has raw values, those values are determined as part of the declaration, which means every instance of a particular enumeration case always has the same raw value. Another choice for enumeration cases is to have values associated with the case—these values are determined when you make the instance, and they can be different for each instance of an enumeration case. You can think of the associated values as behaving like stored properties of the enumeration case instance. For example, consider the case of requesting the sunrise and sunset times from a server. The server either responds with the requested information, or it responds with a description of what went wrong.
 //:
+/*
 enum ServerResponse {
     case result(String, String)
     case failure(String)
@@ -84,6 +145,30 @@ switch success {
     case let .failure(message):
         print("Failure...  \(message)")
 }
+*/
+
+
+
+/*
+enum ServerResponse {
+    case result(String, String)
+    case failure(String)
+    case risk(String)
+}
+
+let success = ServerResponse.result("6:00 am", "8:09 pm")
+let failure = ServerResponse.failure("Out of cheese.")
+let risk = ServerResponse.risk("8:00")
+
+switch risk {
+    case let .result(sunrise, sunset):
+        print("Sunrise is at \(sunrise) and sunset is at \(sunset).")
+    case let .failure(message):
+        print("Failure...  \(message)")
+    case let .risk(lisk):
+        print("\(lisk)... Please add Ante or Post based on Meridiem")
+}
+*/
 
 //: - Experiment:
 //: Add a third case to `ServerResponse` and to the switch.
@@ -101,6 +186,41 @@ struct Card {
 }
 let threeOfSpades = Card(rank: .three, suit: .spades)
 let threeOfSpadesDescription = threeOfSpades.simpleDescription()
+
+// print(threeOfSpadesDescription)
+
+
+
+struct Cards {
+    var rank: Rank
+    var suit: Suit
+    func simpleDescription() -> String {
+        return "The \(rank.simpleDescription()) of \(suit.simpleDescription())"
+    }
+
+    /* static */ func allCards() -> [Cards/*String*/] {
+        let ranks = [Rank.ace, Rank.two, Rank.three, Rank.four, Rank.five, Rank.six, Rank.seven, Rank.eight, Rank.nine, Rank.ten, Rank.jack, Rank.queen, Rank.king]
+        let suits = [Suit.spades, Suit.hearts, Suit.diamonds, Suit.clubs]
+        var deck = [Cards/*String*/]()
+        for suit in suits /*[Suit.spades, Suit.hearts, Suit.diamonds, Suit.clubs]*/ {
+            for rank in ranks /*[Rank.ace, Rank.two, Rank.three, Rank.four, Rank.five, Rank.six, Rank.seven, Rank.eight, Rank.nine, Rank.ten, Rank.jack, Rank.queen, Rank.king]*/ /*1...13 { if let rawRank = Rank(rawValue: rank)*/ {
+                deck.append(Cards(rank: rank/*rawRank*/, suit: suit)/*.simpleDescription()*/) /*}*/
+                /*
+                let card = Cards(rank: rank/*rawRank*/, suit: suit)
+                deck.append(card.simpleDescription())
+                */
+            }
+        }
+        // print(deck)
+        return deck
+    }
+}
+
+let createDeck = Cards(rank: .ace, suit: .hearts).allCards() // let createDeck = Cards.deck()
+/*
+let aceHearts = Cards(rank: .ace, suit: .hearts)
+let createDeck = aceHearts.allCards()
+*/
 
 //: - Experiment:
 //: Write a function that returns an array containing a full deck of cards, with one card of each combination of rank and suit.
