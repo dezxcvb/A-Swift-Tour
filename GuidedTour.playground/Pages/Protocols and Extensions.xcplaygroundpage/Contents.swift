@@ -30,6 +30,44 @@ var b = SimpleStructure()
 b.adjust()
 let bDescription = b.simpleDescription
 
+
+
+protocol ExampleProtocols {
+    var simpleDescription: String { get }
+    var addProperty: String { get }
+    mutating func adjust()
+    mutating func addMethod()
+}
+
+class SimpleClasses: ExampleProtocols {
+    var simpleDescription: String = "A very simple class."
+    var addProperty: String = "Add Protocol"
+    var anotherProperty: Int = 69105
+    func adjust() {
+         simpleDescription += "  Now 100% adjusted."
+    }
+    func addMethod() {
+        simpleDescription += " New adjusted"
+    }
+}
+var A = SimpleClasses()
+A.adjust()
+let ADescription = A.simpleDescription
+
+struct SimpleStructures: ExampleProtocols {
+    var simpleDescription: String = "A simple structure"
+    var addProperty: String = "Add Protocol"
+    mutating func adjust() {
+        simpleDescription += " (adjusted)"
+    }
+    mutating func addMethod() {
+        simpleDescription += " (New adjusted)"
+    }
+}
+var B = SimpleStructures()
+B.adjust()
+let BDescription = B.simpleDescription
+
 //: - Experiment:
 //: Add another requirement to `ExampleProtocol`. What changes do you need to make to `SimpleClass` and `SimpleStructure` so that they still conform to the protocol?
 //:
@@ -45,7 +83,16 @@ extension Int: ExampleProtocol {
         self += 42
     }
  }
-print(7.simpleDescription)
+
+// print(7.simpleDescription)
+
+
+
+extension Double {
+    var absoluteValue: Int {
+        return Int(self)
+    }
+}
 
 //: - Experiment:
 //: Write an extension for the `Double` type that adds an `absoluteValue` property.
@@ -53,8 +100,9 @@ print(7.simpleDescription)
 //: You can use a protocol name just like any other named type—for example, to create a collection of objects that have different types but that all conform to a single protocol. When you work with values whose type is a protocol type, methods outside the protocol definition aren’t available.
 //:
 let protocolValue: ExampleProtocol = a
-print(protocolValue.simpleDescription)
-// print(protocolValue.anotherProperty)  // Uncomment to see the error
+
+// print(protocolValue.simpleDescription)
+// print(protocolValue.anotherProperty)  /// Uncomment to see the error
 
 //: Even though the variable `protocolValue` has a runtime type of `SimpleClass`, the compiler treats it as the given type of `ExampleProtocol`. This means that you can’t accidentally access methods or properties that the class implements in addition to its protocol conformance.
 //:
