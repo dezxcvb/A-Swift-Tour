@@ -21,9 +21,18 @@ func send(job: Int, toPrinter printerName: String) throws -> String {
 //:
 do {
     let printerResponse = try send(job: 1040, toPrinter: "Bi Sheng")
-    print(printerResponse)
+    // print(printerResponse)
 } catch {
-    print(error)
+    // print(error)
+}
+
+
+
+do {
+    let printerResponse = try send(job: 1040, toPrinter: "Never Has Toner")
+    // print(printerResponse)
+} catch {
+    // print(error)
 }
 
 //: - Experiment:
@@ -31,16 +40,82 @@ do {
 //:
 //: You can provide multiple `catch` blocks that handle specific errors. You write a pattern after `catch` just as you do after `case` in a switch.
 //:
+/*
+func send(job: Int, toPrinter printerName: String) throws -> String {
+    if printerName == "Never Has Toner" {
+        throw PrinterError.noToner
+    } else if printerName == "Gutenberg" {
+        throw PrinterError.onFire
+    }
+    return "Job sent"
+}
+*/
+
+
+
 do {
     let printerResponse = try send(job: 1440, toPrinter: "Gutenberg")
-    print(printerResponse)
+    // print(printerResponse)
 } catch PrinterError.onFire {
-    print("I'll just put this over here, with the rest of the fire.")
+    // print("I'll just put this over here, with the rest of the fire.")
 } catch let printerError as PrinterError {
-    print("Printer error: \(printerError).")
+    // print("Printer error: \(printerError).")
 } catch {
-    print(error)
+    // print(error)
 }
+
+
+
+// # 1 - first block
+
+/*
+do {
+    throw PrinterError.onFire
+    let printerResponse = try send(job: 1440, toPrinter: "Gutenberg")
+    // print(printerResponse)
+} catch PrinterError.onFire {
+    // print("I'll just put this over here, with the rest of the fire.")
+} catch let printerError as PrinterError {
+    // print("Printer error: \(printerError).")
+} catch {
+    // print(error)
+}
+*/
+
+// # 2 - second block
+
+/*
+do {
+    let printerResponse = try send(job: 1440, toPrinter: "Never Has Toner")
+    // print(printerResponse)
+} catch PrinterError.onFire {
+    // print("I'll just put this over here, with the rest of the fire.")
+} catch let printerError as PrinterError {
+    // print("Printer error: \(printerError).")
+} catch {
+    // print(error)
+}
+*/
+
+// # 3 - third block
+
+/*
+enum anotherEnum: ErrorType {
+    case someCase
+}
+
+do {
+    throw anotherEnum.someCase
+    let printerResponse = try send(job: 1440, toPrinter: "Gutenberg")
+    // print(printerResponse)
+} catch PrinterError.onFire {
+    // print("I'll just put this over here, with the rest of the fire.")
+} catch let printerError as PrinterError {
+    // print("Printer error: \(printerError).")
+} catch {
+    // print(error)
+}
+*/
 
 //: - Experiment:
 //: Add code to throw an error inside the `do` block. What kind of error do you need to throw so that the error is handled by the first `catch` block? What about the second and third blocks?
@@ -65,7 +140,7 @@ func fridgeContains(_ food: String) -> Bool {
     return result
 }
 fridgeContains("banana")
-print(fridgeIsOpen)
+// print(fridgeIsOpen)
 
 
 
